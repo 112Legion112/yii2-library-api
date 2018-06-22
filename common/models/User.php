@@ -3,7 +3,7 @@ namespace common\models;
 
 use common\models\query\UserQuery;
 use Yii;
-use yii\base\NotSupportedException;
+
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
@@ -21,7 +21,6 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
- * @property string $description
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -55,7 +54,6 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['email', 'required'],
             ['email', 'email'],
-            ['description', 'string'],
         ];
     }
 
@@ -216,7 +214,6 @@ class User extends ActiveRecord implements IdentityInterface
             'id' => 'id',
             'username' => 'username',
             'email' => 'email',
-            'description' => 'description',
         ];
     }
 }

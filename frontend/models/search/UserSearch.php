@@ -1,17 +1,17 @@
 <?php
 
-namespace api\models;
+namespace frontend\models\search;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Post;
+use common\models\User;
 
-class PostSearch extends Post
+class UserSearch extends User
 {
     public function rules()
     {
         return [
-            [['title'], 'safe'],
+            [['username'], 'safe'],
         ];
     }
 
@@ -26,25 +26,24 @@ class PostSearch extends Post
      */
     public function search($params)
     {
-        $query = Post::find();
+        $query = User::find()->active();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => [
+                'defaultOrder' => ['id' => SORT_DESC],
+            ]
         ]);
 
         $this->load($params);
 
         if (!$this->validate()) {
+            $query->where('0=1');
             return $dataProvider;
         }
 
-        $query->andFilterWhere(['like', 'title', $this->title]);
+        $query->andFilterWhere(['like', 'username', $this->username]);
 
         return $dataProvider;
-    }
-
-    public function formName()
-    {
-        return 's';
     }
 }

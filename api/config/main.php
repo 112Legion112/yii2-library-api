@@ -14,6 +14,9 @@ return [
     'modules' => [],
     'components' => [
         'request' => [
+            'enableCsrfValidation' => false,
+            'enableCsrfCookie' => false,
+            'enableCookieValidation' =>false,
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
                 'application/xml' => 'yii\web\XmlParser',
@@ -47,13 +50,9 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                '' => 'site/index',
+                'library/take' => 'library/take-book',
+                'library/return/' => 'library/return-book',
                 'auth' => 'site/login',
-
-                'GET profile' => 'profile/index',
-                'PUT,PATCH profile' => 'profile/update',
-
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'post'],
             ],
         ],
     ],

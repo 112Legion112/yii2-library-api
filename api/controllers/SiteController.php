@@ -10,7 +10,7 @@ class SiteController extends Controller
 {
     public function actionIndex()
     {
-        return 'api';
+        return 'API';
     }
 
     public function actionLogin()

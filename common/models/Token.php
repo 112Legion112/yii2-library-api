@@ -2,12 +2,10 @@
 
 namespace common\models;
 
-use common\models\query\PostQuery;
-use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
 /**
- * This is the model class for table "{{%post}}".
+ * This is the model class for table "{{%token}}".
  *
  * @property integer $id
  * @property integer $user_id
