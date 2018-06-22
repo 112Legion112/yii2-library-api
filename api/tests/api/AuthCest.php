@@ -22,12 +22,6 @@ class AuthCest
         ]);
     }
 
-    public function badMethod(ApiTester $I)
-    {
-        $I->sendGET('/');
-        $I->seeResponseCodeIs(404);
-    }
-
     public function wrongCredentials(ApiTester $I)
     {
         $I->sendPOST('/auth', [

@@ -50,6 +50,7 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'site/index',
                 'library/take' => 'library/take-book',
                 'library/return/' => 'library/return-book',
                 'auth' => 'site/login',
