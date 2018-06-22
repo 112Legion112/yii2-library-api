@@ -35,11 +35,13 @@ php yii migrate/up
 php yii serve --docroot=@root --port=8081
 ```
 После этого сайт будет доступен через  
-`
+
 http://localhost:8081/frontend/web/
+
 http://localhost:8081/backend/web/
+
 http://localhost:8081/api/web/
-`
+
 
 Тестирование API
 ===============================
